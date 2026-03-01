@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Iron Temple Fitness</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+    <div class="logo">Iron Temple</div>
+
+    <div class="menu-toggle">☰</div>
+
+    <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#programs">Programs</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+
+    <button class="btn">Join Now</button>
+    <div class="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+</nav>
+
+    <!-- Hero Section -->
+    <section class="hero reveal">
+        <div class="hero-content">
+            <h1>Transform Your Body. Transform Your Life.</h1>
+            <p>Premium fitness training designed for serious results.</p>
+            <button class="hero-btn">Start Your Journey</button>
+        </div>
+    </section>
+    <section id="about" class="about reveal">
+    <div class="about-container">
+        
+        <div class="about-image slide-left">
+            <img src="gym2.jpg" alt="Gym Training">
+        </div>
+
+        <div class="about-content slide-right">
+            <h2>About Iron Temple</h2>
+            <p>
+                Iron Temple is a premium fitness center dedicated to helping
+                individuals transform their bodies and build unstoppable confidence.
+                With certified trainers and modern equipment, we ensure real results.
+            </p>
+
+            <p>
+                Whether you're a beginner or an athlete, we provide customized
+                training programs designed to push you beyond your limits.
+            </p>
+
+            <button>Learn More</button>
+        </div>
+
+    </div>
+</section>
+   <section id="programs" class="programs reveal">
+    <h2>Our Programs</h2>
+
+    <div class="card reveal">
+       <div class="card reveal">
+            <h3>Strength Training</h3>
+            <p>Build muscle and increase raw power.</p>
+        </div>
+
+        <div class="card reveal">
+            <h3>Fat Loss</h3>
+            <p>Burn fat with structured training plans.</p>
+        </div>
+
+        <div class="card reveal">
+            <h3>Personal Coaching</h3>
+            <p>1-on-1 premium fitness guidance.</p>
+        </div>
+    </div>
+</section>
+<section class="stats reveal">
+    <div class="stat">
+        <h2 class="counter" data-target="1500">0</h2>
+        <p>Members</p>
+    </div>
+    <div class="stat">
+        <h2 class="counter" data-target="25">0</h2>
+        <p>Trainers</p>
+    </div>
+    <div class="stat">
+        <h2 class="counter" data-target="10">0</h2>
+        <p>Years Experience</p>
+    </div>
+</section>
+<section id="pricing" class="pricing reveal">
+    <h2>Membership Plans</h2>
+
+    <div class="card reveal">
+
+        <div class="price-card reveal">
+            <h3>Basic</h3>
+            <p class="price">₹999 / month</p>
+            <ul>
+                <li>Gym Access</li>
+                <li>Basic Equipment</li>
+                <li>Locker Facility</li>
+            </ul>
+            <button>Join Now</button>
+        </div>
+
+        <div class="price-card reveal">
+            <h3>Premium</h3>
+            <p class="price">₹1999 / month</p>
+            <ul>
+                <li>All Basic Features</li>
+                <li>Personal Trainer</li>
+                <li>Diet Plan</li>
+            </ul>
+            <button>Join Now</button>
+        </div>
+
+        <div class="price-card reveal">
+            <h3>Elite</h3>
+            <p class="price">₹2999 / month</p>
+            <ul>
+                <li>All Premium Features</li>
+                <li>1-on-1 Coaching</li>
+                <li>Priority Support</li>
+            </ul>
+            <button>Join Now</button>
+        </div>
+
+    </div>
+</section>
+<section id="contact" class="contact reveal">
+    <h2>Contact Us</h2>
+
+    <form id="contactForm">
+        <input type="text" id="name" placeholder="Your Name" required>
+        <input type="email" id="email" placeholder="Your Email" required>
+        <textarea id="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+        <p id="formMessage"></p>
+    </form>
+</section>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+   
+<script>
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+
+    hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+</script>
+<script>
+    function revealOnScroll() {
+      const reveals = document.querySelectorAll(".reveal, .slide-left, .slide-right");
+
+        reveals.forEach((element, index) => {
+            const windowHeight = window.innerHeight;
+            const elementTop = element.getBoundingClientRect().top;
+            const revealPoint = 100;
+
+            if (elementTop < windowHeight - revealPoint) {
+                setTimeout(() => {
+                    element.classList.add("active");
+                }, index * 150); // stagger delay
+            }
+        });
+    }
+
+    window.addEventListener("scroll", revealOnScroll);
+</script>
+<script>
+    const counters = document.querySelectorAll(".counter");
+
+    counters.forEach(counter => {
+        counter.innerText = "0";
+
+        const updateCounter = () => {
+            const target = +counter.getAttribute("data-target");
+            const count = +counter.innerText;
+            const increment = target / 100;
+
+            if (count < target) {
+                counter.innerText = Math.ceil(count + increment);
+                setTimeout(updateCounter, 20);
+            } else {
+                counter.innerText = target;
+            }
+        };
+
+        updateCounter();
+    });
+</script>
+<script>
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const message = document.getElementById("message").value.trim();
+    const formMessage = document.getElementById("formMessage");
+
+    if (name === "" || email === "" || message === "") {
+        formMessage.style.color = "red";
+        formMessage.innerText = "Please fill all fields!";
+        return;
+    }
+
+    const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+    if (!email.match(emailPattern)) {
+        formMessage.style.color = "red";
+        formMessage.innerText = "Please enter a valid email!";
+        return;
+    }
+
+    formMessage.style.color = "lightgreen";
+    formMessage.innerText = "Message sent successfully!";
+
+    this.reset();
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,607 @@
+html {
+    scroll-behavior: smooth;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background-color: rgb(17, 16, 16);
+    color: white;
+    position: sticky;
+    top: 0;
+}
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+.nav-links a {
+    text-decoration: none;
+    color: white;
+}
+.btn {
+    background-color: gold;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.hero {
+    height: 100vh;
+    background: linear-gradient(
+        rgba(0,0,0,0.6),
+        rgba(0,0,0,0.6)
+    ),
+    url("gym.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 80px;
+    color: white;
+}
+
+
+.hero h1 {   
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 25px;
+}
+
+
+.hero button {
+    background-color: black;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.hero button:hover {
+    background-color: gold;
+    color: black;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    color: white;
+    padding: 20px 80px;
+}
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    transition: 0.3s;
+}
+
+.navbar a:hover {
+    color: gold;
+}
+.hero button {
+    background-color: gold;
+    color: black;
+    padding: 14px 30px;
+    border: none;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.hero button:hover {
+    background-color: white;
+}
+.hero h1 {
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeUp 1s ease forwards;
+}
+
+.hero p {
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeUp 1s ease forwards;
+    animation-delay: 0.3s;
+}
+
+.hero button {
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeUp 1s ease forwards;
+    animation-delay: 0.6s;
+}
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.navbar {
+    animation: slideDown 0.8s ease forwards;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+.hero button {
+    transition: 0.3s ease;
+}
+
+.hero button:hover {
+    transform: scale(1.05);
+}
+.navbar a {
+    transition: 0.3s ease;
+}
+
+.navbar a:hover {
+    transform: translateY(-3px);
+}          
+@media (max-width: 768px) {
+
+    .navbar {
+        flex-direction: column;
+        padding: 20px;
+        gap: 15px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+
+    .hero {
+        padding-left: 20px;
+        padding-right: 20px;
+        text-align: center;
+        align-items: center;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .hero button {
+        width: 100%;
+        max-width: 250px;
+    }
+
+}
+/* Hide hamburger on desktop */
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+    }
+
+
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: black;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 100%;
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .btn {
+        display: none;
+    }
+}
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: white;
+}
+@media (max-width: 768px) {
+
+    .nav-links {
+        position: absolute;
+        top: 70px;
+        right: -100%;
+        background: black;
+        flex-direction: column;
+        width: 200px;
+        text-align: center;
+        padding: 20px 0;
+        transition: 0.3s ease;
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .btn {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+}
+.programs {
+    padding: 80px 50px;
+    background: #111;
+    color: white;
+    text-align: center;
+}
+
+.programs h2 {
+    font-size: 36px;
+    margin-bottom: 50px;
+}
+
+.program-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: #1a1a1a;
+    padding: 40px;
+    width: 280px;
+    border-radius: 10px;
+    transition: 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    background: gold;
+    color: black;
+}
+.pricing {
+    padding: 80px 50px;
+    background: black;
+    color: white;
+    text-align: center;
+}
+
+.pricing h2 {
+    font-size: 36px;
+    margin-bottom: 50px;
+}
+
+.pricing-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.price-card {
+    background: #111;
+    padding: 40px;
+    width: 280px;
+    border-radius: 10px;
+    transition: 0.3s ease;
+}
+
+.price-card h3 {
+    margin-bottom: 15px;
+}
+
+.price {
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: gold;
+}
+
+.price-card ul {
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+.price-card ul li {
+    margin: 8px 0;
+}
+
+.price-card button {
+    background: gold;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.price-card:hover {
+    transform: translateY(-10px);
+}
+
+.popular {
+    background: gold;
+    color: black;
+    transform: scale(1.05);
+}
+
+.popular button {
+    background: black;
+    color: white;
+}
+.reveal {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: all 0.8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+.reveal {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: all 0.8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+.price-card, .card {
+    position: relative;
+    overflow: hidden;
+}
+
+.price-card::before, .card::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,215,0,0.3) 0%, transparent 60%);
+    transform: scale(0);
+    transition: 0.5s ease;
+}
+
+.price-card:hover::before, .card:hover::before {
+    transform: scale(1);
+}
+
+.price-card:hover, .card:hover {
+    transform: translateY(-10px);
+}
+.stats {
+    display: flex;
+    justify-content: space-around;
+    padding: 80px 50px;
+    background: #111;
+    color: white;
+    text-align: center;
+}
+
+.stat h2 {
+    font-size: 40px;
+    color: gold;
+}
+.contact {
+    padding: 80px 50px;
+    background: black;
+    color: white;
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.contact form {
+    max-width: 500px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact input,
+.contact textarea {
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+}
+
+.contact button {
+    background: gold;
+    border: none;
+    padding: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.contact button:hover {
+    background: white;
+}
+
+#formMessage {
+    margin-top: 10px;
+    font-size: 14px;
+}
+.about {
+    padding: 80px 50px;
+    background: #111;
+    color: white;
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.about-image img {
+    width: 450px;
+    border-radius: 10px;
+}
+
+.about-content {
+    max-width: 500px;
+}
+
+.about-content h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.about-content p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.about-content button {
+    background: gold;
+    border: none;
+    padding: 12px 25px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.about-content button:hover {
+    background: white;
+}
+.slide-left,
+.slide-right {
+    opacity: 0;
+    transition: all 1s ease;
+}
+
+.slide-left {
+    transform: translateX(-100px);
+}
+
+.slide-right {
+    transform: translateX(100px);
+}
+
+.slide-left.active,
+.slide-right.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+/* ================= MOBILE RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+
+    /* Navbar */
+    .navbar {
+        flex-direction: column;
+        padding: 20px;
+        gap: 15px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+
+    /* Hero */
+    .hero {
+        padding-left: 20px;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    /* About */
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-image img {
+        width: 100%;
+    }
+
+    /* Stats */
+    .stats {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    /* Programs & Pricing */
+    .programs,
+    .pricing {
+        padding: 60px 20px;
+        text-align: center;
+    }
+
+    .card,
+    .price-card {
+        margin-bottom: 30px;
+    }
+
+    /* Contact */
+    .contact {
+        padding: 60px 20px;
+    }
+}
